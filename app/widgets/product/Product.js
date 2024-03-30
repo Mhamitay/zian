@@ -4,14 +4,13 @@ import styled from 'styled-components/native'
 
 const Product = ({ id,img }) => {
   return (
-        <ProductContainer>
-          <Text>{id}</Text>
-          <Image_Background
-            resizeMode='cover'
-            //source={{ uri: img }}
-            source={require('../../../assets/images/prod.png')}
-          />
-        </ProductContainer>
+    <ProductContainer>
+      <Image_Background
+        resizeMode='cover'
+        //source={{ uri: img }}
+        source={require('../../../assets/images/prod.png')}
+      />
+    </ProductContainer>
   )
 }
 
