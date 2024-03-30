@@ -11,7 +11,6 @@ export const Data = [
   { id: 9, image: 'https://randomuser.me/api/portraits/med/women/35.jpg' },
 ]
 
-
 export const Categories = [
   { id: 1, name: 'بخور' },
   { id: 1, name: 'عبايات' },
@@ -24,3 +23,11 @@ export const Categories = [
   { id: 1, name: 'افراح' },
   { id: 1, name: 'مناسبات' },
 ]
+
+
+export const Colors = {
+  black: '#2b2b2b',
+  gray: '#dcdcdc',
+  pink:'#ffeaed'
+}
+

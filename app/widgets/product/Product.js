@@ -1,8 +1,7 @@
 import React from 'react'
-import { ImageBackground, Text } from 'react-native'
 import styled from 'styled-components/native'
 
-const Product = ({ id,img }) => {
+const Product = ({ id, img }) => {
   return (
     <ProductContainer>
       <Image_Background
@@ -26,9 +25,9 @@ const ProductContainer = styled.View`
   flex-direction: row;
   border-radius: 50px;
   overflow: hidden;
-  height:300px;
-  width:340px;
-  margin-right:15px;
+  height: 420px;
+  width: 340px;
+  margin-right: 15px;
 `
 
 const Image_Background = styled.ImageBackground`
