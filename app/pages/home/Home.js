@@ -23,7 +23,7 @@ const Home = (props) => {
         <ProductView>
           {/* <FlatList
             data={list}
-            renderItem={renderItem}
+            renderItem={renderItem}asdfads
             keyExtractor={(item, index) => index.toString()}
             horizontal={true} // Render items horizontally
           /> */}
