@@ -1,19 +1,21 @@
 import React from 'react'
+import { ImageBackground, Text } from 'react-native'
 import styled from 'styled-components/native'
 
-const Product = (props) => {
-  const list = ['A', 'B', 'C']
-
+const Product = ({ id,img }) => {
   return (
-    <>
-      <TrendingTitle>Trending now</TrendingTitle>
-      <Container>
-        <ProductContainer></ProductContainer>
-      </Container>
-    </>
+        <ProductContainer>
+          <Text>{id}</Text>
+          <Image_Background
+            resizeMode='cover'
+            //source={{ uri: img }}
+            source={require('../../../assets/images/prod.png')}
+          />
+        </ProductContainer>
   )
 }
 
+//#region Style
 const Container = styled.View`
   display: flex;
   flex-direction: row;
@@ -23,13 +25,17 @@ const Container = styled.View`
 const ProductContainer = styled.View`
   background-color: #d1bea8;
   flex-direction: row;
-  flex: 1;
   border-radius: 50px;
-  width: 85%;
+  overflow: hidden;
+  height:300px;
+  width:340px;
+  margin-right:15px;
 `
-const TrendingTitle = styled.View`
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 15px;
+
+const Image_Background = styled.ImageBackground`
+  flex: 1;
+  width: 100%;
+  height: 100%;
 `
+//#endregion
 export default Product
