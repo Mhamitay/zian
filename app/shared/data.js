@@ -7,21 +7,21 @@ export const Data = [
   { id: 6, image: 'https://randomuser.me/api/portraits/med/women/35.jpg' },
   { id: 7, image: 'https://randomuser.me/api/portraits/med/women/35.jpg' },
   { id: 8, image: 'https://randomuser.me/api/portraits/med/women/35.jpg' },
-  { id: 8, image: 'https://randomuser.me/api/portraits/med/women/35.jpg' },
   { id: 9, image: 'https://randomuser.me/api/portraits/med/women/35.jpg' },
+  { id: 10, image: 'https://randomuser.me/api/portraits/med/women/35.jpg' },
 ]
 
 export const Categories = [
   { id: 1, name: 'بخور' },
-  { id: 1, name: 'عبايات' },
-  { id: 1, name: 'حجابات' },
-  { id: 1, name: 'نسائي' },
-  { id: 1, name: 'اطفال' },
-  { id: 1, name: 'بناتي' },
-  { id: 1, name: 'رمضان,' },
-  { id: 1, name: 'العيد' },
-  { id: 1, name: 'افراح' },
-  { id: 1, name: 'مناسبات' },
+  { id: 2, name: 'عبايات' },
+  { id: 3, name: 'حجابات' },
+  { id: 4, name: 'نسائي' },
+  { id: 5, name: 'اطفال' },
+  { id: 6, name: 'بناتي' },
+  { id: 7, name: 'رمضان,' },
+  { id: 8, name: 'العيد' },
+  { id: 9, name: 'افراح' },
+  { id: 10, name: 'مناسبات' },
 ]
 
 

@@ -34,33 +34,31 @@ const PorfileView = styled(SubContainer)`
   border: 0px;
 `
 const Title = styled.View`
-  flex: 2.2;
   display: flex;
+  flex: 3.5;
   justify-content: center;
-  align-items: center;
 `
 const TitleText = styled.Text`
   font-size: 40px;
   font-weight: bold;
-  justify-content: center;
+  text-align: right;
 `
 const Avatar = styled.View`
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  margin-right: 10px;
 `
 const ProfileImage = styled.View`
   height: 80px;
   width: 80px;
-
   border-radius: 50px;
   background-color: #ffeaed;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 90px;
+  border:1px
 `
 // const Logo = styled(MaterialCommunityIcons)``
 //#endregion

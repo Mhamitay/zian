@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components/native'
 
-import Product from '../../widgets/product/Product'
+import Product from '../product/Product'
 import { Data, Categories, Colors } from '../../shared/data'
 import { FlatList, Pressable, SafeAreaView, Text, View } from 'react-native'
 
-import CategoryItem from '../../widgets/product/CategoryItem'
+import CategoryItem from '../../pages/product/CategoryItem'
 import Icon from '../../shared/icon'
 import Profile from './comps/Profile'
 
@@ -15,7 +15,10 @@ const Home = () => {
   const renderCategories = ({ item, i }) => {
     return (
       <Pressable>
-        <CategoryItem name={item.name}></CategoryItem>
+        <CategoryItem
+          key={item.id}
+          name={item.name}
+        ></CategoryItem>
       </Pressable>
     )
   }
