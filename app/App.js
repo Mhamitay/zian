@@ -1,11 +1,13 @@
 import React from 'react'
-import Home from './pages/home/Home'
 import styled from 'styled-components/native'
-import ProductList from './pages/productList/ProductList'
-import Detail from './pages/Detail/detail'
+import ProductList from './pages/productList'
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
 function App() {
-  return <ProductList />
+  return
+  <GestureHandlerRootView style={{ flex: 1 }}>
+    <Home />
+  </GestureHandlerRootView>
 }
 
 const MainContainer = styled.View`

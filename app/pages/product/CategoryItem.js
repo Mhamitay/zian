@@ -1,13 +1,21 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { Pressable, Text, View } from 'react-native'
 import styled from 'styled-components/native'
+import { router } from 'expo-router'
 
-export default function CategoryItem({ name }) {
+export default function CategoryItem({ _id, tId, name }) {
+  const press = () => {
+    console.log('pressed .................')
+    router.push({ pathname: `/pages/productList/`, params: tId }) // Remove the braces in params
+  }
+
   return (
-    <Container>
-      <Item>
-        <ItemName>{name}</ItemName>
-      </Item>
+    <Container key={tId}>
+      <Pressable onPress={press}>
+        <Item>
+          <ItemName>{name}</ItemName>
+        </Item>
+      </Pressable>
     </Container>
   )
 }
@@ -29,6 +37,7 @@ const Item = styled.View`
   border-radius: 40px;
   border-color: lightgray;
 `
+
 const ItemName = styled.Text`
   font-size: 20px;
   color: gray;

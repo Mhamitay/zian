@@ -1,15 +1,16 @@
 import React from 'react'
 import styled from 'styled-components/native'
 import { SafeAreaView, Text, View } from 'react-native'
-import Profile from '../home/comps/Profile'
+import Profile from '../../shared/Profile'
 import { Colors } from '../../shared/data'
 import Icon from '../../shared/icon'
 
 const Detail = () => {
+  const title = 'تفاصيل المنتج'
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <MainContainer>
-        <Profile />
+        <Profile title={title} />
         <ImageCollections>
           <TopImg>
             <OneProductImage
@@ -81,10 +82,10 @@ const Count = styled(SubContainer)`
   background-color: ${Colors.gray};
   flex-direction: row;
   justify-content: space-evenly;
-  align-items:center;
+  align-items: center;
 `
-const TextCount =styled.Text`
-font-size:20px
+const TextCount = styled.Text`
+  font-size: 20px;
 `
 
 const AddToCart = styled(SubContainer)`

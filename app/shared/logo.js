@@ -17,7 +17,7 @@ export default Logo
 const Image_Background = styled(ImageBackground)`
   border: 1px;
   overflow: hidden;
-  height: 70px;
-  width: 70px;
+  height: 40px;
+  width: 40px;
   border-radius: 50px;
 `
