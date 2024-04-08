@@ -6,13 +6,14 @@ import Profile from '../../../shared/Profile'
 import { Colors } from '../../../shared/data'
 
 const ListItem = ({ _id, img, price }) => {
+  const imageUri = img
   return (
     <Container>
       <TouchableOpacity onPress={() => router.navigate('../../pages/Detail')}>
         <ProductImage
           key={_id}
           resizeMode='cover'
-          source={{ uri: img }}
+          source={{ uri: imageUri }}
         />
       </TouchableOpacity>
       <TextPrice>${price}</TextPrice>

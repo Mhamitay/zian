@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Home from './pages/home'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import useSwR, { SWRConfig } from 'swr'
+import ImageUploader from './pages/ImageUploader'
 
 const index = (props) => {
   const categoriesFetcher = (...args) =>

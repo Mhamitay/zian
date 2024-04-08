@@ -5,11 +5,13 @@ import { FlatList, SafeAreaView } from 'react-native'
 import ListItem from '../Detail/comp/listItem'
 import Profile from '../../shared/Profile'
 import useSWR from 'swr'
-import { useLocalSearchParams } from 'expo-router'
+import { useNavigation, useRoute } from '@react-navigation/native' // Import useNavigation and useRoute
+import ImageUploader from '../ImageUploader'
 
 const ProductList = () => {
+  const route = useRoute() // Get route object
+  const { id } = route.params // The entire params object will be tId
 
-  console.log('found id from pram ' + id)
   const title = 'قائمة المنتجات'
 
   const productFetcher = (...args) => fetch(...args).then((res) => res.json())
@@ -32,8 +34,9 @@ const ProductList = () => {
     <SafeAreaView style={{ flex: 1 }}>
       <MainContainer>
         <Profile title={title} />
+        {/* <ImageUploader /> */}
         <FlatList
-          data={productData?.Product}
+          data={productData}
           numColumns={2}
           renderItem={renderItem}
           keyExtractor={(item) => `key-${item._id}`}
