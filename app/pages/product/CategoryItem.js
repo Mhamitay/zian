@@ -2,11 +2,8 @@ import React from 'react'
 import { Pressable, Text, View } from 'react-native'
 import styled from 'styled-components/native'
 import { router } from 'expo-router'
-import { useNavigation } from '@react-navigation/native' // Import useNavigation from @react-navigation/native
 
 export default function CategoryItem({ _id, tId, name }) {
-  const navigation = useNavigation() // Get navigation object
-
   const press = () => {
     router.push({ pathname: '/pages/productList/', params: { id: tId } })
     //navigation.push('`/pages/productList/', { tId }) // Navigate to 'ProductList' screen with tId as parameter

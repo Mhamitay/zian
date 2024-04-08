@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components/native'
 
-import Product from '../product'
-import { Populars, Colors } from '../../shared/data'
+import { Colors } from '../../shared/data'
 import {
   FlatList,
-  Pressable,
   SafeAreaView,
-  ScrollView,
   TouchableOpacity,
   View,
-  Text,
   ActivityIndicator,
 } from 'react-native'
 
@@ -18,8 +14,8 @@ import CategoryItem from '../product/CategoryItem'
 import Icon from '../../shared/icon'
 import Profile from '../../shared/Profile'
 import { router } from 'expo-router'
-import AsyncStorage from '@react-native-async-storage/async-storage'
 import useSwR from 'swr'
+import MostRequested from './comps/mostRequested'
 
 const Home = () => {
   //#region States
@@ -32,6 +28,14 @@ const Home = () => {
     Categoriesfetcher
   )
 
+  const productFetcher = (...args) => fetch(...args).then((res) => res.json())
+
+  const { data: productData, error: categoriesError } = useSwR(
+    'https://zain-backend-01.vercel.app/api/product',
+    productFetcher
+  )
+  // const newProduct = getRandomItem()
+  //console.log(newProduct)
   const renderCategories = ({ item, i }) => {
     return (
       <CategoryItem
@@ -41,17 +45,7 @@ const Home = () => {
       />
     )
   }
-  const renderItem = ({ item, i }) => {
-    const StorefrontIcon = 'StorefrontIcon'
 
-    return (
-      <Product
-        key={item.id}
-        id={item.id}
-        img={item.image}
-      />
-    )
-  }
   //#endregion
 
   return (
@@ -92,18 +86,11 @@ const Home = () => {
         </CategoriesView>
         <ProductView>
           <Trending>الاكثر طلبا.. </Trending>
-          <FlatList
-            onScroll={(e) => {
-              //scrollY.setValue(e.nativeEvent.contentOffset.y)
-            }}
-            data={Populars}
-            //numColumns={2}
-            renderItem={renderItem}
-            horizontal={true}
-            keyExtractor={(item) => `key-${item.id}`}
-            initialNumToRender={1}
-            showsVerticalScrollIndicator={false}
-          />
+          {productData ? (
+            <MostRequested data={productData.Product} />
+          ) : (
+            <View></View>
+          )}
         </ProductView>
         <TabsView>
           <Tab style={{ backgroundColor: Colors.black }}>

@@ -1,21 +1,30 @@
-import { router } from 'expo-router'
 import React from 'react'
-import { Text, TouchableOpacity, View, Image } from 'react-native'
+import { Text, TouchableOpacity, View, Image, Pressable } from 'react-native'
 import styled from 'styled-components/native'
-import Profile from '../../../shared/Profile'
 import { Colors } from '../../../shared/data'
+import { router } from 'expo-router'
 
-const ListItem = ({ _id, img, price }) => {
+const ListItem = ({ _id, img, price, item }) => {
   const imageUri = img
+
+  const press = () => {
+    console.log(item)
+    router.push({
+      pathname: '/pages/Detail/',
+      params: { item: JSON.stringify(item) },
+    })
+  }
+
   return (
     <Container>
-      <TouchableOpacity onPress={() => router.navigate('../../pages/Detail')}>
+      {/* // router.navigate('../../pages/Detail')}> */}
+      <Pressable onPress={press}>
         <ProductImage
           key={_id}
           resizeMode='cover'
           source={{ uri: imageUri }}
         />
-      </TouchableOpacity>
+      </Pressable>
       <TextPrice>${price}</TextPrice>
     </Container>
   )

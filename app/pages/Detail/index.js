@@ -1,12 +1,19 @@
 import React from 'react'
-import styled from 'styled-components/native'
 import { SafeAreaView, Text, View } from 'react-native'
-import Profile from '../../shared/Profile'
 import { Colors } from '../../shared/data'
+import Profile from '../../shared/Profile'
+import styled from 'styled-components/native'
 import Icon from '../../shared/icon'
+import { useRoute } from '@react-navigation/native' // Import useNavigation and useRoute
 
 const Detail = () => {
+  const route = useRoute()
+  const { item } = route.params
+
+  const data = JSON.parse(item)
+  console.log(data)
   const title = 'تفاصيل المنتج'
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <MainContainer>
@@ -15,24 +22,24 @@ const Detail = () => {
           <TopImg>
             <OneProductImage
               resizeMode='cover'
-              source={require('../../../assets/images/02.png')}
+              source={{ uri: data.img }}
             />
           </TopImg>
           <ButtomImg>
             <BImage
               resizeMode='cover'
-              source={require('../../../assets/images/02.png')}
+              source={{ uri: data.img }}
             />
             <BImage
               resizeMode='cover'
-              source={require('../../../assets/images/02.png')}
+              source={{ uri: data.img }}
             />
           </ButtomImg>
         </ImageCollections>
         <Description>
-          <TextDescription>Soja&Co</TextDescription>
-          <TextName>Lavender soy candle</TextName>
-          <TextPrice>$11.90</TextPrice>
+          <TextDescription>{data.name}</TextDescription>
+          <TextName>{data.desc}</TextName>
+          <TextPrice>${data.price}</TextPrice>
         </Description>
         <Actions>
           <Count>
@@ -152,8 +159,7 @@ const TextDescription = styled.Text`
 `
 const TextName = styled.Text`
   margin-top: 5px;
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 20px;
 `
 const TextPrice = styled.Text`
   font-size: 27px;

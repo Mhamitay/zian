@@ -1,12 +1,10 @@
 import React from 'react'
-import { useState } from 'react'
 import styled from 'styled-components/native'
 import { FlatList, SafeAreaView } from 'react-native'
 import ListItem from '../Detail/comp/listItem'
 import Profile from '../../shared/Profile'
 import useSWR from 'swr'
-import { useNavigation, useRoute } from '@react-navigation/native' // Import useNavigation and useRoute
-import ImageUploader from '../ImageUploader'
+import { useRoute } from '@react-navigation/native' // Import useNavigation and useRoute
 
 const ProductList = () => {
   const route = useRoute() // Get route object
@@ -27,6 +25,7 @@ const ProductList = () => {
       _id={item._id}
       img={item.img}
       price={item.price}
+      item={item}
     />
   )
 

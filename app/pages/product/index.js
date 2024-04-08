@@ -6,8 +6,8 @@ const Product = ({ id, img }) => {
     <ProductContainer>
       <Image_Background
         resizeMode='cover'
-        //source={{ uri: img }}
-        source={require('../../../assets/images/prod.png')}
+        source={{ uri: img }}
+        //source={require('../../../assets/images/prod.png')}
       />
     </ProductContainer>
   )

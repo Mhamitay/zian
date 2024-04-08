@@ -1,9 +1,6 @@
-import { View, StyleSheet, Text } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Home from './pages/home'
-import AsyncStorage from '@react-native-async-storage/async-storage'
-import useSwR, { SWRConfig } from 'swr'
-import ImageUploader from './pages/ImageUploader'
+import useSwR from 'swr'
 
 const index = (props) => {
   const categoriesFetcher = (...args) =>
