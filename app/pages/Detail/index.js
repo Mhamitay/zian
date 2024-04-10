@@ -11,7 +11,7 @@ const Detail = () => {
   const { item } = route.params
 
   const data = JSON.parse(item)
-  console.log(data)
+  // console.log(data)
   const title = 'تفاصيل المنتج'
 
   return (

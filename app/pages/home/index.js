@@ -54,7 +54,7 @@ const Home = () => {
         <Profile
           title={title}
           isHome={true}
-        />
+        ></Profile>
         <CategoriesView>
           {data ? (
             <FlatList
@@ -165,6 +165,8 @@ const MainContainer = styled.View`
   flex: 1; /* Added flex: 1 to make MainContainer take all available space */
   border: 0px;
   padding: 15px;
+  justifyContent:center
+
 `
 
 const CategoriesView = styled(SubContainer)`
@@ -194,15 +196,16 @@ const TabsView = styled(SubContainer)`
   background-color: ${Colors.gray};
   padding: 0px;
   margin-top: 15px;
-  height: 100px;
+  height: 80px;
   border-radius: 100px;
+  border:0px
 `
 const Tab = styled(SubContainer)`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   border-radius: 50px;
 `
 // const MyMaterialCommunityIcons = styled(MaterialCommunityIcons)`
